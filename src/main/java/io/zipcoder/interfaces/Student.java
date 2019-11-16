@@ -4,21 +4,21 @@ public final class Student extends Person implements Learner {
     private Double totalStudyTime;
     private long id;
 
-    public Student(){
+    public Student() {
         this.id = 0;
     }
 
-    public Student(long id){
+    public Student(long id) {
         setId(id);
     }
 
     @Override
-    public void setName(String name){
-         super.setName(name);
+    public void setName(String name) {
+        super.setName(name);
     }
 
     @Override
-    public String getName(){
+    public String getName() {
         return super.getName();
     }
 

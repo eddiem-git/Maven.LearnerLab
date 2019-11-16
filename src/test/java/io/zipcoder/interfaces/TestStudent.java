@@ -2,15 +2,23 @@ package io.zipcoder.interfaces;
 
 import org.junit.Test;
 
-public class TestStudent {
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
+public class TestStudent {
+    Student s = new Student();
     @Test
-    void testImplementation(){
+    public void testImplementation(){
+        assertTrue(s instanceof Learner);
     }
     @Test
-    void testInheritance(){
+    public void testInheritance(){
+        assertTrue(s instanceof Person);
     }
     @Test
-    void testLearn(){
+    public void testLearn(){
+        double numberOfHours = 5.7;
+        s.learn(numberOfHours);
+        assertEquals(numberOfHours,s.getTotalStudyTime(),0.000001);
     }
 }

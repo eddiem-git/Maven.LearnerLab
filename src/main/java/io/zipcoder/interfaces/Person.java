@@ -4,7 +4,7 @@ public class Person {
     final long id;
     String name;
 
-    public Person(Long id, String name){
+    public Person(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -17,9 +17,15 @@ public class Person {
         this.id = id;
     }
 
-    public Long getId(){ return this.id; }
+    public Long getId() {
+        return this.id;
+    }
 
-    public String getName(){ return this.name; }
+    public String getName() {
+        return this.name;
+    }
 
-    public void setName(String name){ this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

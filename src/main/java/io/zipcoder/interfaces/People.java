@@ -1,41 +1,50 @@
 package io.zipcoder.interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class People {
-    List<Person> personList;
-
-    public void add() {
+public abstract class People<E extends Person> {
+    List<Person> personList = new ArrayList<Person>();
+   // The class should define a method named add which adds a Person to the personList.
+    public void add(E person) {
+        personList.add(person);
     }
-
+    //The class should define a method named findById which makes use of a long id
+    // parameter to return a Person object with the respective id field.
     public Person findById(Long id) {
+        for ( Person person: personList) {
+                if(person.getId() == id){
+                    return person;
+                }
+        }
         return null;
     }
-
+    //The class should define a named contains which makes use of a Person person
+    // parameter to return true if the personList contains the respective Person object.
     public Boolean contains(Person person) {
-        return false;
+        personList.contains(person);
+        return true;
     }
-
+    //The class should define a method named remove which makes use of a Person person parameter
+    // to remove a respective Person object.
     public void remove(Person person) {
+        personList.remove(person);
     }
-
+    //The class should define a method named remove which makes use of a long id
+    // parameter to remove a Person object with the respective id field.
     public void remove(Long Id) {
+        personList.remove(findById(Id));
     }
-
-    public void removeAll(List<Person> personList){
-        removeAll(this.personList);
+    //The class should define a named removeAll which clears our personList field.
+    public void removeAll(List<Person> personList) {
+        personList.clear();
     }
-
-    public Integer count(){
-        return this.personList.size();
+    //The class should define a method named count which returns the size of personList.
+    public Integer count() {
+        return personList.size();
     }
-
-    public void toArray(){
-
+    //The class should define a method named toArray which returns an array representation of the personList field.
+    public Integer[] toArray() {
+        return personList.toArray(new Integer[personList.size()]);
     }
-
-
-
-
-
 }
