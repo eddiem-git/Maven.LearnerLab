@@ -1,31 +1,33 @@
 package io.zipcoder.interfaces;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class TestPerson {
-    @Test
-    public void personTest(){
-    //given we have a name and a Id upon construction
-    Long expectedId = null;
-    String expectedName = null;
-    Person person = new Person(null,null);
-    //when we set these values
-    Long actualId = person.getId();
-    String actualName = person.getName();
-    //then when we compare these values
-    Assert.assertEquals(actualId,expectedId);
-    Assert.assertEquals(actualName,expectedName);
+    Person person;
+
+    @Before
+    public void setID(){
+        long idInput = 0474754;
+        person = new Person(idInput);
     }
+
     @Test
-    public void personNameTest(){
-        //given
-        Person person = new Person(null,"Eddie");
-        person.setName("Eddie");
-        //when
-        String expectedName = "Eddie";
-        String actualName = person.getName();
-        //then
-        Assert.assertEquals(actualName,expectedName);
+    public void testConstructor(){
+        long idInput = 0474754;
+        person = new Person(idInput);
+        long actual = person.getId();
+        assertEquals(idInput, actual);
+    }
+
+    @Test
+    public void TestSetName(){
+        String name = "Eddie";
+        person.setName(name);
+        String actual = person.getName();
+        assertEquals(name, actual);
     }
 }

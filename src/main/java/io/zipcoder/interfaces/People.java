@@ -35,12 +35,15 @@ public abstract class People<E extends Person> {
     public void remove(Long Id) {
         personList.remove(findById(Id));
     }
+    public void removeById(long id){
+        personList.remove(findById(id));
+    }
     //The class should define a named removeAll which clears our personList field.
     public void removeAll(List<Person> personList) {
         personList.clear();
     }
     //The class should define a method named count which returns the size of personList.
-    public Integer count() {
+    public Integer getCount() {
         return personList.size();
     }
     //The class should define a method named toArray which returns an array representation of the personList field.

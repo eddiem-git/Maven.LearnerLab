@@ -25,5 +25,9 @@ public class TestInstructor {
     }
     @Test
     public void testLecture(){
+        Student[] students = new Student[4];
+        students[1] = new Student(505);
+        students[2] = new Student(403);
+        students[3] = new Student(203);
     }
 }

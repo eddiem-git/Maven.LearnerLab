@@ -28,4 +28,8 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String setName() {
+       return this.name = "Eddie";
+    }
 }
