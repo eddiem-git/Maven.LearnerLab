@@ -3,7 +3,7 @@ package io.zipcoder.interfaces;
 import org.junit.Assert;
 import org.junit.Test;
 
-     class StudentsTest {
+     class TestStudents {
 
     @Test
     public void test(){

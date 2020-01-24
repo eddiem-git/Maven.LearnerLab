@@ -5,6 +5,10 @@ import java.util.List;
 
 public abstract class People<E extends Person> {
     List<Person> personList = new ArrayList<Person>();
+
+    public People(){
+    }
+
    // The class should define a method named add which adds a Person to the personList.
     public void add(E person) {
         personList.add(person);
@@ -13,7 +17,7 @@ public abstract class People<E extends Person> {
     // parameter to return a Person object with the respective id field.
     public Person findById(Long id) {
         for ( Person person: personList) {
-                if(person.getId() == id){
+                if(person.getId().equals(id)){
                     return person;
                 }
         }
@@ -39,8 +43,7 @@ public abstract class People<E extends Person> {
         personList.remove(findById(id));
     }
     //The class should define a named removeAll which clears our personList field.
-    public void removeAll(List<Person> personList) {
-        personList.clear();
+    public void removeAll(List<Person> personList) { personList.clear();
     }
     //The class should define a method named count which returns the size of personList.
     public Integer getCount() {

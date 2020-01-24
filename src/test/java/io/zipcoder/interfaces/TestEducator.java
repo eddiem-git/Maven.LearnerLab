@@ -4,7 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-    class EducatorTest {
+
+    public class TestEducator {
     Instructor instructor = new Instructor(0L);
     Educator tariq = Educator.TARIQ;
     Educator leon = Educator.LEON;
@@ -12,22 +13,22 @@ import static org.junit.Assert.assertTrue;
     Educator kris = Educator.KRIS;
 
     @Test
-    public void testImplementationt() {
+    public void testImplementationtTariq() {
         assertTrue(tariq instanceof Teacher);
     }
 
     @Test
-    public void testImplementationl() {
+    public void testImplementationLeon() {
         assertTrue(leon instanceof Teacher);
     }
 
     @Test
-    public void testImplementationn() {
+    public void testImplementationNbu() {
         assertTrue(nhu instanceof Teacher);
     }
 
     @Test
-    public void testImplementationk() {
+    public void testImplementationKris() {
         assertTrue(kris instanceof Teacher);
     }
 
